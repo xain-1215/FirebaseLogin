@@ -32,29 +32,32 @@
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.55" />
+        app:layout_constraintVertical_bias="0.55"
+        android:onClick="login"/>
 
-    <TextView
+    <EditText
         android:id="@+id/email"
         android:layout_width="350dp"
         android:layout_height="50dp"
         android:gravity="center_vertical|left"
-        android:text="jane@example.com"
+        android:text="  jane@example.com"
         android:textSize="20dp"
         android:background="@drawable/textview_border"
+        android:inputType="textEmailAddress"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.325" />
 
-    <TextView
+    <EditText
         android:id="@+id/password"
         android:layout_width="350dp"
         android:layout_height="50dp"
         android:gravity="center_vertical|left"
-        android:text="************"
+        android:text="  ************"
         android:textSize="20dp"
+        android:inputType="textPassword"
         android:background="@drawable/textview_border"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
