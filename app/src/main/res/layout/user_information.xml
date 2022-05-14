@@ -8,11 +8,11 @@
 
     <TextView
         android:id="@+id/username"
-        android:layout_width="350dp"
+        android:layout_width="400dp"
         android:layout_height="80dp"
         android:text="Hello,"
         android:gravity="center|left"
-        android:autoSizeTextType="uniform"
+        android:textSize="25dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintHorizontal_bias="0.1"
         app:layout_constraintLeft_toLeftOf="parent"

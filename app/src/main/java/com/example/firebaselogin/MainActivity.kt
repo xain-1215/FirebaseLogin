@@ -82,7 +82,6 @@ class MainActivity : AppCompatActivity() {
     private fun updateUI() {
         val intent = Intent()
         intent.setClass(this@MainActivity, user_information::class.java)
-        intent.setClass(this@MainActivity, user_information::class.java)
         val bundle = Bundle()
         bundle.putString("email",email.getText().toString())
         intent.putExtras(bundle)

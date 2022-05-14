@@ -4,29 +4,29 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    tools:context=".password_change">
 
     <TextView
         android:id="@+id/title"
-        android:layout_width="200dp"
+        android:layout_width="350dp"
         android:layout_height="80dp"
-        android:text="Log in"
-        android:gravity="center"
-        android:autoSizeTextType="uniform"
+        android:text="Change password"
+        android:gravity="center|left"
+        android:textSize="25dp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintHorizontal_bias="0.1"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.133" />
 
     <Button
-        android:id="@+id/login"
+        android:id="@+id/submit"
         android:layout_width="350dp"
-        android:layout_height="50dp"
-        android:textSize="20dp"
+        android:layout_height="80dp"
+        android:textSize="25dp"
         android:gravity="center"
-        android:text="login"
+        android:text="SUBMIT"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintLeft_toLeftOf="parent"
@@ -36,33 +36,31 @@
         />
 
     <EditText
-        android:id="@+id/email"
-        android:layout_width="350dp"
-        android:layout_height="50dp"
-        android:gravity="center_vertical|left"
-        android:text="  jane@example.com"
-        android:textSize="20dp"
-        android:background="@drawable/textview_border"
-        android:inputType="textEmailAddress"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.325" />
-
-    <EditText
         android:id="@+id/password"
         android:layout_width="350dp"
         android:layout_height="50dp"
         android:gravity="center_vertical|left"
-        android:text="  *******"
+        android:text="  new password"
         android:textSize="20dp"
-        android:inputType="textPassword"
         android:background="@drawable/textview_border"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.44" />
+        app:layout_constraintVertical_bias="0.3" />
+
+    <EditText
+        android:id="@+id/password2"
+        android:layout_width="350dp"
+        android:layout_height="50dp"
+        android:gravity="center_vertical|left"
+        android:text="  type again"
+        android:textSize="20dp"
+        android:background="@drawable/textview_border"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.4" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

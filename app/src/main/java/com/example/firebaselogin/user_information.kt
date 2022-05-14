@@ -1,5 +1,6 @@
 package com.example.firebaselogin
 
+import android.content.Intent
 import android.os.Bundle
 import android.widget.Button
 import android.widget.TextView
@@ -16,9 +17,11 @@ class user_information : AppCompatActivity() {
         val bundle = this.intent.extras
         username=findViewById(R.id.username)
         chPwdBtn=findViewById(R.id.changePwd)
-        username.setText("Hello"+bundle!!.getString("email"))
+        username.setText("Hello,"+bundle!!.getString("email"))
         chPwdBtn.setOnClickListener(){
-
+            val intent = Intent()
+            intent.setClass(this@user_information, password_change::class.java)
+            startActivity(intent)
         }
     }
 }
