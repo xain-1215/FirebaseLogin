@@ -18,7 +18,7 @@ class account_register : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.user_information)
+        setContentView(R.layout.account_register)
 
         newEmail=findViewById(R.id.newEmail)
         register=findViewById(R.id.create)
