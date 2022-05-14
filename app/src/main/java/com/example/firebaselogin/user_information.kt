@@ -16,7 +16,7 @@ class user_information : AppCompatActivity() {
         val bundle = this.intent.extras
         username=findViewById(R.id.username)
         chPwdBtn=findViewById(R.id.changePwd)
-        username.setText(bundle!!.getString("email"))
+        username.setText("Hello"+bundle!!.getString("email"))
         chPwdBtn.setOnClickListener(){
 
         }
