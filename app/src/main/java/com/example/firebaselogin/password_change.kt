@@ -27,12 +27,16 @@ class password_change: AppCompatActivity() {
             val newPassword = password.getText().toString()
             val newPassword2=password2.getText().toString()
             if(newPassword.equals(newPassword2)) {
+                //password change function
                 user!!.updatePassword(newPassword).addOnCompleteListener { task ->
                     if (task.isSuccessful) {
                         Log.d(TAG, "User password updated.")
                         val intent = Intent()
                         intent.setClass(this@password_change, MainActivity::class.java)
-                        startActivity(intent)                    }
+                        startActivity(intent)
+                        Firebase.auth.signOut()//sign out function
+                        finish()
+                    }
                 }
             }
         }

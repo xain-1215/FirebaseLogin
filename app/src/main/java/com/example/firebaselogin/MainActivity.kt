@@ -16,6 +16,7 @@ class MainActivity : AppCompatActivity() {
     private lateinit var email: EditText//user's email
     private lateinit var pwd: EditText//user's password
     private lateinit var loginBtn: Button//login button
+    private lateinit var register: Button//register button
     private lateinit var auth: FirebaseAuth
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -25,9 +26,15 @@ class MainActivity : AppCompatActivity() {
         email=findViewById(R.id.email)
         pwd=findViewById(R.id.password)
         loginBtn=findViewById(R.id.login)
+        register=findViewById(R.id.register)
         auth = Firebase.auth//initialize Firebase auth
         loginBtn.setOnClickListener{
             signIn(email.getText().toString(),pwd.getText().toString())
+        }
+        register.setOnClickListener{
+            val intent = Intent()
+            intent.setClass(this@MainActivity, account_register::class.java)
+            startActivity(intent)
         }
     }
     public override fun onStart() {
@@ -39,44 +46,21 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
-    private fun createAccount(email: String, password: String) {
-        auth.createUserWithEmailAndPassword(email, password)
-            .addOnCompleteListener(this) { task ->
-                if (task.isSuccessful) {
-                    // Sign in success, update UI with the signed-in user's information
-                    Log.d(TAG, "createUserWithEmail:success")
-                    val user = auth.currentUser
-                } else {
-                    // If sign in fails, display a message to the user.
-                    Log.w(TAG, "createUserWithEmail:failure", task.exception)
-                    Toast.makeText(baseContext, "Authentication failed.",
-                        Toast.LENGTH_SHORT).show()
-                }
-            }
-    }
-
+    //login function
     private fun signIn(email: String, password: String) {
         auth.signInWithEmailAndPassword(email, password).addOnCompleteListener(this) { task ->
                 if (task.isSuccessful) {
                     //Login success
                     Log.d(TAG, "signInWithEmail:success")
                     updateUI()
+                    reload()
                 } else {
                     //Login failed and show message
                     Log.w(TAG, "signInWithEmail:failure", task.exception)
                     Toast.makeText(baseContext, "Authentication failed.", Toast.LENGTH_SHORT).show()
+                    reload()
                 }
             }
-    }
-
-    private fun sendEmailVerification() {
-        // [START send_email_verification]
-        val user = auth.currentUser!!
-        user.sendEmailVerification()
-            .addOnCompleteListener(this) { task ->
-                // Email Verification sent
-            }
-        // [END send_email_verification]
     }
 
     private fun updateUI() {
@@ -88,12 +72,13 @@ class MainActivity : AppCompatActivity() {
         startActivity(intent)
     }
 
+    //clean the edittext
     private fun reload() {
-
+        email.setText("  jane@example.com")
+        pwd.setText("  *****")
     }
 
-
     companion object {
-        private const val TAG = "EmailPassword"
+        const val TAG = "EmailPassword"
     }
 }

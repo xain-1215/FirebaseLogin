@@ -26,6 +26,11 @@
             android:name=".password_change"
             android:exported="true">
         </activity>
+        <activity
+            android:name=".account_register"
+            android:exported="true">
+        </activity>
+
     </application>
 
 </manifest>
